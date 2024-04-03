@@ -5,11 +5,11 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Spotify API Credentials
-SPOTIFY_CLIENT_ID = os.getenv('SPOTIFY_CLIENT_ID')  # Replace 'your-default-client-id' with a default or raise an exception if this should not have a default
-SPOTIFY_CLIENT_SECRET = os.getenv('SPOTIFY_CLIENT_SECRET')  # Same as above
+SPOTIFY_CLIENT_ID = os.getenv('SPOTIFY_CLIENT_ID')  
+SPOTIFY_CLIENT_SECRET = os.getenv('SPOTIFY_CLIENT_SECRET')  
 
 # OpenAI API Key
-OPENAI_API_KEY = os.getenv('OPENAI_API_KEY', 'your-default-openai-key')  # Same as above
+OPENAI_API_KEY = os.getenv('openai.api_key') 
 
 # CORS configuration
 CORS_ORIGINS = [
@@ -26,10 +26,10 @@ DEFAULT_GENRE = "pop"
 TRACK_NUM = 50  # Number of tracks in the playlist
 
 # Spotify Redirect URI
-SPOTIFY_REDIRECT_URI = os.getenv('SPOTIFY_REDIRECT_URI', 'http://localhost:3000/callback')  # Change to your application's redirect URI
+SPOTIFY_REDIRECT_URI = os.getenv('SPOTIFY_REDIRECT_URI', 'http://localhost:3001/callback')  # Change to your application's redirect URI
 
 # Spotify User
-SPOTIFY_USER_ID = os.getenv('SPOTIFY_USER_ID')  # Your Spotify user ID
+SPOTIFY_USER_ID = '31vxd2rpgrlanjxy6mu5fvcexoaq'  # Your Spotify user ID
 
 # Application Settings
 APP_DESCRIPTION = "Spotify Playlist Generator API"

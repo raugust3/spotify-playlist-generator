@@ -199,8 +199,19 @@ def playlist_generator(acousticness: str, danceability: str, energy: str, instru
     
     load_dotenv()
     gptKey = os.getenv('openai.api_key')
-    spotifyClient = os.getenv('SPOTIFY_CLIENT_ID')
-    spotifySecret = os.getenv('SPOTIFY_CLIENT_SECRET')
+    # spotifyClient = os.getenv('SPOTIFY_CLIENT_ID')
+    # spotifySecret = os.getenv('SPOTIFY_CLIENT_SECRET')
+    # Load environment variables containing sensitive information
+    CLIENT_ID = '52b7deed70ef4ae3bb2b4429ad67da13'
+    CLIENT_SECRET = '192b0588ebd442708136fb208b5cfad8'
+
+    # Initialize Spotify client with credentials
+    client_credentials_manager = SpotifyClientCredentials(client_id=CLIENT_ID, client_secret=CLIENT_SECRET)
+    sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
+
+    # Define scope for playlist modification and initialize SpotifyOAuth
+    scope = 'playlist-modify-public'
+    username = '21vfivikrsgu47rba5yurqbwa'
     # Check both conditions first
     if promptActivate and inputActivate:
         openai.api_key = gptKey
@@ -359,18 +370,18 @@ def playlist_generator(acousticness: str, danceability: str, energy: str, instru
                 return None 
 
         # Load environment variables containing sensitive information
-        load_dotenv()
-        CLIENT_ID = os.getenv('SPOTIFY_CLIENT_ID')
-        CLIENT_SECRET = os.getenv('SPOTIFY_CLIENT_SECRET')
+        # load_dotenv()
+        # CLIENT_ID = os.getenv('SPOTIFY_CLIENT_ID')
+        # CLIENT_SECRET = os.getenv('SPOTIFY_CLIENT_SECRET')
 
-        # Initialize Spotify client with credentials
-        client_credentials_manager = SpotifyClientCredentials(client_id=CLIENT_ID, client_secret=CLIENT_SECRET)
-        sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
+        # # Initialize Spotify client with credentials
+        # client_credentials_manager = SpotifyClientCredentials(client_id=CLIENT_ID, client_secret=CLIENT_SECRET)
+        # sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
 
-        # Define scope for playlist modification and initialize SpotifyOAuth
-        scope = 'playlist-modify-public'
-        username = '31vxd2rpgrlanjxy6mu5fvcexoaq'
-        sp_oauth = SpotifyOAuth(client_id=CLIENT_ID, client_secret=CLIENT_SECRET, scope=scope, username=username, redirect_uri='http://127.0.0.1:3001/')
+        # # Define scope for playlist modification and initialize SpotifyOAuth
+        # scope = 'playlist-modify-public'
+        # username = '31vxd2rpgrlanjxy6mu5fvcexoaq'
+        sp_oauth = SpotifyOAuth(client_id=CLIENT_ID, client_secret=CLIENT_SECRET, scope=scope, username=username, redirect_uri='http://127.0.0.1:3000/')
         access_token = sp_oauth.get_access_token(as_dict=False)
         spotifyObject = spotipy.Spotify(auth=access_token)
 
@@ -483,19 +494,19 @@ def playlist_generator(acousticness: str, danceability: str, energy: str, instru
             dictionary["Genre 1"] = "Pop"
 
         # Load environment variables containing sensitive information
-        load_dotenv()
-        CLIENT_ID = os.getenv('SPOTIFY_CLIENT_ID')
-        CLIENT_SECRET = os.getenv('SPOTIFY_CLIENT_SECRET')
+        # load_dotenv()
+        # CLIENT_ID = os.getenv('SPOTIFY_CLIENT_ID')
+        # CLIENT_SECRET = os.getenv('SPOTIFY_CLIENT_SECRET')
 
-        # Initialize Spotify client with credentials
-        client_credentials_manager = SpotifyClientCredentials(client_id=CLIENT_ID, client_secret=CLIENT_SECRET)
-        sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
+        # # Initialize Spotify client with credentials
+        # client_credentials_manager = SpotifyClientCredentials(client_id=CLIENT_ID, client_secret=CLIENT_SECRET)
+        # sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
 
-        # Define scope for playlist modification and initialize SpotifyOAuth
-        scope = 'playlist-modify-public'
-        username = '31vxd2rpgrlanjxy6mu5fvcexoaq'
+        # # Define scope for playlist modification and initialize SpotifyOAuth
+        # scope = 'playlist-modify-public'
+        # username = '31vxd2rpgrlanjxy6mu5fvcexoaq'
         list_of_songs = []
-        sp_oauth = SpotifyOAuth(client_id=CLIENT_ID, client_secret=CLIENT_SECRET, scope=scope, username=username, redirect_uri='http://127.0.0.1:3001/')
+        sp_oauth = SpotifyOAuth(client_id=CLIENT_ID, client_secret=CLIENT_SECRET, scope=scope, username=username, redirect_uri='http://127.0.0.1:3000/')
         access_token = sp_oauth.get_access_token(as_dict=False)
         spotifyObject = spotipy.Spotify(auth=access_token)
 
@@ -652,18 +663,18 @@ def playlist_generator(acousticness: str, danceability: str, energy: str, instru
                 return None  
 
         # Load environment variables containing sensitive information
-        load_dotenv()
-        CLIENT_ID = os.getenv('SPOTIFY_CLIENT_ID')
-        CLIENT_SECRET = os.getenv('SPOTIFY_CLIENT_SECRET')
+        # load_dotenv()
+        # CLIENT_ID = os.getenv('SPOTIFY_CLIENT_ID')
+        # CLIENT_SECRET = os.getenv('SPOTIFY_CLIENT_SECRET')
 
-        # Initialize Spotify client with credentials
-        client_credentials_manager = SpotifyClientCredentials(client_id=CLIENT_ID, client_secret=CLIENT_SECRET)
-        sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
+        # # Initialize Spotify client with credentials
+        # client_credentials_manager = SpotifyClientCredentials(client_id=CLIENT_ID, client_secret=CLIENT_SECRET)
+        # sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
 
-        # Define scope for playlist modification and initialize SpotifyOAuth
-        scope = 'playlist-modify-public'
-        username = '31vxd2rpgrlanjxy6mu5fvcexoaq'
-        sp_oauth = SpotifyOAuth(client_id=CLIENT_ID, client_secret=CLIENT_SECRET, scope=scope, username=username, redirect_uri='http://127.0.0.1:3001/')
+        # # Define scope for playlist modification and initialize SpotifyOAuth
+        # scope = 'playlist-modify-public'
+        # username = '31vxd2rpgrlanjxy6mu5fvcexoaq'
+        sp_oauth = SpotifyOAuth(client_id=CLIENT_ID, client_secret=CLIENT_SECRET, scope=scope, username=username, redirect_uri='http://127.0.0.1:3000/')
         access_token = sp_oauth.get_access_token(as_dict=False)
         spotifyObject = spotipy.Spotify(auth=access_token)
 

@@ -5,7 +5,7 @@ __pycache__/
 
 # Caches
 .cache/
-server/.cache-31vxd2rpgrlanjxy6mu5fvcexoaq/
+.cache-a48m42v2oh6jueon4np6nsibm
 
 # C extensions
 *.so

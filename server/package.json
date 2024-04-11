@@ -4,7 +4,7 @@
   "description": "Backend for Spotify Playlist Generator",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "python -m uvicorn src.app:app --reload --port 8080"
+    "dev": "python -m uvicorn src.app:app --reload --port 8080 --env-file src/.env"
   },
   "keywords": [],
   "author": "Spotify Playlist Gen Team",
